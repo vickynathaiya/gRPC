@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+service CiBeez {
+  rpc CbzRpc (CbzRequest) returns (CbzResponse) {}
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message CbzName {
+  string name = 1;
+}
+
+message CbzRequest {
+  string name = 1;
+  string message = 2;
+}
+
+message CbzResponse {
+  string message = 1;
+}
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}
